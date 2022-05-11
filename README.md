@@ -236,7 +236,7 @@ By default, the code will load `refined_exstyle_code.npy` or `exstyle_code.npy` 
 
 ## (4) Results
 
-#### Exemplar-based cartoon style trasnfer
+#### Exemplar-based cartoon style transfer
 
 https://user-images.githubusercontent.com/18130694/158047991-77c31137-c077-415e-bae2-865ed3ec021f.mp4
 

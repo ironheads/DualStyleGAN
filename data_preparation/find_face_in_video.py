@@ -12,9 +12,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 import os
 
-savename = '1'
-videopath = './video/Arcane1.mp4'
-outpath = './output/'
+savename = os.environ['SAVENAME'] # '1'
+videopath = os.environ['VIDEOPATH'] # './data/arcane/videos/S01E01.mp4'
+outpath = os.environ['OUTPATH'] # './data/arcane/output/'
 predictorpath = './shape_predictor_68_face_landmarks.dat'
 black_width = 89
 
