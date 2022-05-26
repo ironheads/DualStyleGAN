@@ -1,0 +1,4 @@
+
+
+finetune_stylegan: finetune_stylegan.py
+	python -m torch.distributed.launch --nproc_per_node=4 --master_port=8765 finetune_stylegan.py --iter 600 --batch 4 --ckpt ./checkpoint/stylegan2-ffhq-config-f.pt --style arcane --augment ./data/arcane/lmdb/

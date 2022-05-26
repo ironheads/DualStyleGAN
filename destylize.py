@@ -18,6 +18,9 @@ from model.stylegan import lpips
 from model.encoder.psp import pSp
 from model.encoder.criteria import id_loss
 
+class trainArguments():
+    def __init__(self) -> None:
+        self.parser = argparse.ArgumentParser(description="training settings of the face destylization")
 class TestOptions():
     def __init__(self):
 

@@ -9,6 +9,7 @@ from torch.nn import functional as F
 from torch import autograd
 from model.stylegan.op import conv2d_gradfix
 import random
+import argparse
 import math
     
 def visualize(img_arr):
@@ -119,3 +120,22 @@ def set_grad_none(model, targets):
     for n, p in model.named_parameters():
         if n in targets:
             p.grad = None
+
+class settings(object):
+    def __init__(self,name=None) -> None:
+        if name is None:
+            name = "default"
+        self.name = name
+        self.parser = argparse.ArgumentParser(description="the argument settings of %s"%(name))
+
+    @property
+    def add_argument(self):
+        return self.parser.add_argument
+
+    def parse(self):
+        self.options = self.parser.parse_args()
+        args = vars(self.options)
+        print('load the options of %s'%(self.name))
+        for name, value in sorted(args.items()):
+            print('%s: %s' % (str(name), str(value)))
+        return self.options
